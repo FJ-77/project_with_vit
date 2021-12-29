@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Advert
 
 def adverts(request):
-	adverts = Advert.objetcs.all()
+	adverts = Advert.objects.all()
 	context = { 'adverts':adverts }
 	return render(request, 'adverts/index.html', context)
 
